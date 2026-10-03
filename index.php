@@ -396,7 +396,9 @@ footer {
 </head>
 <body>
     <nav class="navbar">
-        <div class="brand">Sena Store</div>
+        <div class="brand">
+            Sena Store
+        </div>
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#products">Products</a></li>
@@ -423,12 +425,12 @@ footer {
         <div class="product-grid">
             <?php foreach ($products as $item): ?>
                 <?php
-                    $has_discount = $item['harga'] >= 1000000;
-                    $final_price = $item['harga'];
+                    $diskon = $item['harga'] >= 1000000;
+                    $harga_akhir = $item['harga'];
                     
-                    if ($has_discount) {
-                        $discount_amount = $item['harga'] * 0.10;
-                        $final_price = $item['harga'] - $discount_amount;
+                    if ($diskon) {
+                        $banyak_diskon = $item['harga'] * 0.10;
+                        $harga_akhir = $item['harga'] - $banyak_diskon;
                     }
 
                     $is_available = $item['stok'] > 0;
@@ -437,24 +439,20 @@ footer {
                     <div>
                         <div class="card-header">
                             <span class="category"><?php echo $item['kategori']; ?></span>
-                            <?php if ($has_discount): ?>
+                            <?php if ($diskon): ?>
                                 <span class="badge-discount">DISKON 10%</span>
                             <?php endif; ?>
                         </div>
-
                         <p class="product-description"><?php echo $item['deskripsi']; ?></p>
-                        <img 
-                            src="<?php echo $item['gambar']; ?>" 
+                        <img src="<?php echo $item['gambar']; ?>" 
                             alt="<?php echo $item['nama']; ?>" 
-                            class="product-image"
-                        >
-
+                            class="product-image" >
                         <h3><?php echo $item['nama']; ?></h3>
 
                         <div class="price-container">
-                            <?php if ($has_discount): ?>
-                                <div class="old-price">Rp<?php echo number_format($item['harga'], 0, ',', '.'); ?></div>
-                                <div class="current-price">Rp<?php echo number_format($final_price, 0, ',', '.'); ?></div>
+                            <?php if ($diskon): ?>
+                                <div class="old-price">Rp <?php echo number_format($item['harga'], 0, ',', '.'); ?></div>
+                                <div class="current-price">Rp <?php echo number_format($harga_akhir, 0, ',', '.'); ?></div>
                             <?php else: ?>
                                 <div class="current-price">Rp<?php echo number_format($item['harga'], 0, ',', '.'); ?></div>
                             <?php endif; ?>
