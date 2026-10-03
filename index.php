@@ -13,7 +13,7 @@ $products = [
         "kategori" => "Graphics Card MSI",
         "deskripsi" => "MSI GeForce RTX 2080 GAMING X TRIO menghadirkan performa grafis luar biasa dengan teknologi Ray Tracing dan arsitektur NVIDIA Turing untuk gaming AAA yang mulus",
         "harga" => 4494743,
-        "stok" => 2,
+        "stok" => 0,
         "gambar" => "MSI RTX 2080.webp"
     ],
     [
@@ -405,7 +405,7 @@ footer {
     </nav>
         <div class="container">
         <section class="hero">
-            <span>PREMIUM TECH, BETTER TOMORROW</span>
+            <span>PREMIUM TECH, BEST PRICES</span>
             <h1>Temukan Solusi Terbaik untuk Kebutuhan Anda.</h1>
             <p>kualitas top, harga terbaik, layanan terbaik, semua di satu tempat</p>
             <a href="#products" class="btn-hero">Shop Now</a>
