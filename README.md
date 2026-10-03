@@ -1,4 +1,4 @@
-# PAW-WEEK2-SENA-102042530022
+# PAW-MODUL1-SENA-102042530022
 # Sena Store
 sebuah desain website yang simpel yang dirancang menggunakan baahasa PHP antive, HTML, dan CSS.
 
